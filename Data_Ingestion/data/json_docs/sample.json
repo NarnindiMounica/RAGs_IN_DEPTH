@@ -1,0 +1,52 @@
+{
+  "company": "TechNova Solutions",
+  "employees": [
+    {
+      "id": 101,
+      "name": "Alice Johnson",
+      "role": "Software Engineer",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "SQL"
+      ],
+      "remote": "true"
+    },
+    {
+      "id": 102,
+      "name": "Rajesh Kumar",
+      "role": "Data Analyst",
+      "skills": [
+        "Excel",
+        "R",
+        "Tableau"
+      ],
+      "remote": "false"
+    },
+    {
+      "id": 103,
+      "name": "Maria Lopez",
+      "role": "Project Manager",
+      "skills": [
+        "Agile",
+        "Scrum",
+        "Communication"
+      ],
+      "remote": "true"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "P-001",
+      "name": "AI Chatbot",
+      "status": "In Progress",
+      "budget_usd": 50000
+    },
+    {
+      "project_id": "P-002",
+      "name": "E-commerce Dashboard",
+      "status": "Completed",
+      "budget_usd": 75000
+    }
+  ]
+}
