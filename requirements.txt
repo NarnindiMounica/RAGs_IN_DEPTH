@@ -11,3 +11,6 @@ ipykernel
 python-docx
 docx2txt
 unstructured[docx]
+pandas
+openpyxl
+msoffcrypto-tool
