@@ -76,4 +76,32 @@ class DocumentProcessor:
            return docs   
 
 
-       def split_    
+       def split_documents(self, documents:List[Document])->List[Document]:
+           """
+           Docstring for split_documents
+           
+           Splits documents into chunks
+
+           Args:
+           documents: list of documents to split
+
+           Returns:
+           List of split documents
+           """  
+           return self.splitter.split_documents(documents)
+       
+       def process_url(self, urls:List[str])->List[Document]:
+           """
+           Docstring for process_url
+           
+           Complete pipeline to load and split documents
+
+           Args:
+           urls: List of URLs to process
+
+           Returns:
+           List of processed document chunks
+
+           """
+           docs = self.load_document(urls)
+           return self.split_documents(docs)
