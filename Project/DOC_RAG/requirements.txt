@@ -9,3 +9,4 @@ streamlit
 requests
 wikipedia
 langchain_text_splitters
+langchain-huggingface
