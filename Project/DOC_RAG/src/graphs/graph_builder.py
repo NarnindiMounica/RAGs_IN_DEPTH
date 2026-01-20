@@ -8,6 +8,7 @@ class GraphBuilder:
         self.builder = StateGraph(RAGState)
         self.nodes = RAGNodes()
 
+    def build(self):
         self.builder.add_node("retriever", self.nodes.retrieve_docs)
         self.builder.add_node("generator", self.nodes.generator)
 
@@ -18,4 +19,14 @@ class GraphBuilder:
         self.graph = self.builder.compile()
         return self.graph
     
+    def run(self, question:str)->dict:
+
+        if self.graph is None:
+            self.build()
+
+        initial_state = RAGState(question=question)
+        return self.graph.invoke(initial_state)
+
+
+
     
