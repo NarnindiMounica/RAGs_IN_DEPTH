@@ -21,7 +21,7 @@ class GraphBuilder:
     
     def run(self, question:str)->dict:
 
-        if self.graph is None
+        if self.graph is None:
             self.build()
 
         initial_state = RAGState(question=question)
