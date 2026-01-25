@@ -23,3 +23,12 @@ class ReactRAGNodes:
         docs = self.retriever.invoke(state.question) 
         return RAGState(question=state.question,
                         retrieved_docs= docs) 
+    
+    def _build_tools(self):
+        "build retriever + wikipedia tools"
+
+        
+
+    
+    def _build_agent(self):
+        "react agent with tools"
