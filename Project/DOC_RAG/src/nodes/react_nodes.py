@@ -27,8 +27,19 @@ class ReactRAGNodes:
     def _build_tools(self):
         "build retriever + wikipedia tools"
 
-        
+
 
     
     def _build_agent(self):
         "react agent with tools"
+        tools = self._build_tools()
+        system_prompt = """
+            you are a helpful RAG agent. Prefer 'retriever' for
+            user-provided docs; use 'wikipedia' for general knowledge.
+            Return only the final useful answer."""
+        self._agent = create_agent(
+            self.llm,
+            tools = tools,
+            prompt = system_prompt
+        )
+        
