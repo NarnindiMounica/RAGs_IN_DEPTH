@@ -37,6 +37,10 @@ class ReactRAGNodes:
                 title = meta.get("title") or meta.get("source") or f"doc_{i}"
                 merged.append(f"[{i}] {title}\n{d.page_content}")
             return "\n\n".join(merged)
+        
+        wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
+
+        return [retriever_tool_fn, wikipedia]
 
 
 
