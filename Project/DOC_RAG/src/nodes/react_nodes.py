@@ -2,7 +2,7 @@
 
 from typing import List, Optional
 from src.states.state import RAGState
-
+from langchain_core.tools import tool
 from langchain_core.documents import Document
 from langchain.agents import create_agent
 from langchain_core.messages import HumanMessage
@@ -26,6 +26,18 @@ class ReactRAGNodes:
     
     def _build_tools(self):
         "build retriever + wikipedia tools"
+        @tool
+        def retriever_tool_fn(query:str)->str:
+            docs:List[Document] = self.retriever.invoke(query)
+            if not docs:
+                return "No documents found."
+            merged = []
+            for i, d in enumerate(docs[:8], start=1):
+                meta = d.metadata if hasattr(d, "metadata") else {}
+                
+
+
+
 
 
 
